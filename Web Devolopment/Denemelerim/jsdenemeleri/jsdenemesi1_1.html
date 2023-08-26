@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+
+    <button type="button" onclick="document.write('<p> Renk1:' + renk1 + '<br> Renk2:' + renk2 + '</p>')">Tıkla!</button>
+    <br><br>
+
+    <p id="Deneme"></p>
+    <p id="Isim"></p>
+    <p id="x"></p>
+    <p id="Uzunluk"></p>
+    <p id="dizi"></p>
+    
+    <button type="button" onclick="makeAlert()">Butona Tıkla!</button>
+    <br>
+    <button type="button" onclick="conf()">Butona Tıkla!</button>
+    <br>
+    <p id="confirm"></p>
+    <script>
+
+        var renk1= "Kirmizi";
+        var renk2 = "Sari";
+        var isim = "Mehmet Ali";
+        var x = 2 + 3 + "5";
+        var yazi = "Bu Yazinin Uzunlugu";
+        var dizi = ["Mehmet Ali","Veysel","Emre"];
+
+        document.getElementById("Deneme").innerHTML = "Bu Yazı Javascrip ile Yazılmıştır.";
+        
+        document.getElementById("Isim").innerHTML = "Kişinin Adı: <strong>" + isim + "</strong>";
+
+        document.getElementById("x").innerHTML = "Sayi= <i>" + x + "</i>";
+
+        document.getElementById("Uzunluk").innerHTML = yazi + ": " + yazi.length;
+
+        for(i=0;i<dizi.length;i++)
+        {
+            document.write(dizi[i] + '<br>');
+        }
+
+
+        function makeAlert()
+        {
+            alert("Butona Basıldı!");
+        }
+
+        function conf()
+        {
+            var text;
+
+            if(confirm("Bir Butona Basınız!"))
+            {
+                text = "Tamam Butonuna Bastınız!";
+            }
+            else
+            {
+                text = "Hayır Butonuna Bastınız!";
+            }
+            document.getElementById("confirm").innerHTML = text;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Form Denemesi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+
+    span{
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+        display: none;
+    }
+    .basarili{
+        color: green;
+        font-weight: bold;
+        font-size: 12px;
+        display: none;
+    }
+
+</style>
+
+<body>
+
+    <form action="" id="form">
+        <table border="1" align="center">
+            <tr><th colspan="2">Form Denemesi</th></tr>
+            <tr>
+                <td>Ad Soyad</td>
+                <td><input type="text" id="adSoyad"><span id="adError"></span></td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td><input type="email" id="email"><span id="emailError"></span></td>
+            </tr>
+            <tr>
+                <td>Şifre</td>
+                <td><input type="password" id="sifre"><span id="sifreError"></span></td>
+            </tr>
+            <tr>
+                <td>Şifre Tekrar</td>
+                <td><input type="password" id="sifreTekrar"><span id="sifreTekrarError"></span></td>
+            </tr>
+            <tr>
+                <td>Posta Kodu</td>
+                <td><input type="number" id="postaKodu"><span id="postaError"></span></td>
+            </tr>
+            <tr>
+                <td>Şehir</td>
+                <td><select name="" id="sehir">
+                    <option value="0">[Bir Şehir Seçiniz]</option>
+                    <option value="1">Bursa</option>
+                    <option value="2">Kırklareli</option>
+                    <option value="3">İstanbul</option>
+                </select>
+                <span id="sehirError"></span></td>
+            </tr>
+            <tr>
+                <td><span class="basarili" id="basarili"></span></td>
+                <td><button type="button" id="kayit">Kayıt Ol</button></td>
+                
+            </tr>
+
+        </table>
+    </form>
+
+    
+
+    <script>
+    
+        
+        var adSoyadError = true,
+            emailError = true,
+            passwordError = true,
+            passConfirmError = true,
+            postCodeError = true,
+            cityError = true;
+
+
+
+        $("#kayit").on('click',function(){
+            
+            if($("#adSoyad").val() == 0){
+                $("#adError").text("Lütfen Bir Ad ve Soyad Giriniz!");
+                $("#adError").slideDown("slow");
+                adSoyadError = true;
+            }
+            else
+            {                
+                adSoyadError = false;
+            }
+            if($("#email").val() == "" || !$("#email").val().includes("@") || !$("#email").val().includes(".com"))
+            {
+                $("#emailError").text("Lütfen E-Mailinizi Düzgün Giriniz!");
+                $("#emailError").slideDown("slow");
+                emailError = true;
+            }
+            else
+            {
+                emailError = false;
+            }
+
+            if($("#sifre").val() < 5)
+            {
+                $("#sifreError").text("Şifre En Az 6 Karaktere Sahip Olmalıdır!");
+                $("#sifreError").slideDown("slow");
+                passwordError = true;
+            }
+            else
+            {
+                passwordError = false;
+            }
+
+            if($("#sifre").val() != $("#sifreTekrar").val())
+            {
+                $("#sifreTekrarError").text("Şifreler Eşleşmedi!");
+                $("#sifreTekrarError").slideDown("slow");
+                passConfirmError = true;
+            }
+            else
+            {
+                passConfirmError = false;
+            }
+            
+            if($("#postaKodu").val().length != 5)
+            {
+                $("#postaError").text("Posta Kodu 5 Karekterli Olmalı!");
+                $("#postaError").slideDown("slow");
+                postCodeError = true;
+            }
+            else
+            {
+                postCodeError = false;
+            }
+
+            if($("#form select").val() == 0)
+            {
+                $("#sehirError").text("Lütfen Bir Şehir Seçiniz!");
+                $("#sehirError").slideDown("slow");
+                cityError = true;
+            }
+            else
+            {
+                cityError = false;
+            }
+        
+            if(adSoyadError == false && emailError == false && passwordError == false &&
+            passConfirmError == false && postCodeError == false && cityError == false)
+            {
+                $("#basarili").text("Giriş Başarılı!");
+                $("#basarili").slideDown("slow");
+            }
+            
+        });
+
+
+    </script>
+    
+</body>
+</html>

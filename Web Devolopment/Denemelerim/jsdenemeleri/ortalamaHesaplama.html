@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ortalama Hesaplama</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+
+        div input{
+            display: block;
+            margin: 0px;
+        }
+        div button{
+            display: block;
+            margin-left: 10px;
+        }
+        span{
+            color: red;
+            font-weight: bold;
+            font-size: 13px;
+            margin-left: 10px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <hr>
+    <h1>Ortalama Hesapalama</h1>
+    <div>
+        <input id="kisa1" type="number" placeholder="Kısa Sınav 1 (%10)">
+        <span id="kisa1Error"></span>
+        <input id="kisa2"  type="number" placeholder="Kısa Sınav 2 (%10)">
+        <span id="kisa2Error"></span>
+        <input id="odev"  type="number" placeholder="Ödev (%10)">
+        <span id="odevError"></span>
+        <input id="vize"  type="number" placeholder="Vize (%20)">
+        <span id="vizeError"></span>
+        <input id="final"  type="number" placeholder="Final (%50)">
+        <span id="finalError"></span>
+        <button id="hesapla"   type="button">Hesapla</button>
+    </div>
+    <hr>
+    <p id="notOrtalaması"></p>        
+    
+    <script>
+        $(function(){
+            
+            var kisa1Error = true,
+            kisa2Error = true,
+            odevError = true,
+            vizeError = true,
+            finalError = true;
+
+            $("#hesapla").on('click',function(){
+                var kisa1 = $("#kisa1").val();
+                var kisa2 = $("#kisa2").val();
+                var odev = $("#odev").val();
+                var vize = $("#vize").val();
+                var final = $("#final").val();
+
+                if($("#kisa1").val() == "" || $("#kisa1").val() < 0 || $("#kisa1").val() >100)
+                {
+                    $("#kisa1Error").text("Lütfen Kısa Sınav Notunuzu Düzgün Giriniz!(0-100)");
+                    kisa1Error = true;
+                }
+                else
+                {
+                    kisa1Error = false;
+                }
+                if($("#kisa2").val() == "" || $("#kisa2").val() < 0 || $("#kisa2").val() >100)
+                {
+                    $("#kisa2Error").text("Lütfen Kısa Sınav 2 Notunuzu Düzgün Giriniz!(0-100)");
+                    kisa2Error = true;
+                }
+                else
+                {
+                    kisa2Error = false;
+                }
+                if($("#odev").val() == "" || $("#odev").val() < 0 || $("#odev").val() >100)
+                {
+                    $("#odevError").text("Lütfen Odev Notunuzu Düzgün Giriniz!(0-100)");
+                    odevError = true;
+                }
+                else
+                {
+                    odevError = false;
+                }
+                if($("#vize").val() == "" || $("#vize").val() < 0 || $("#vize").val() >100)
+                {
+                    $("#vizeError").text("Lütfen Vize Notunuzu Düzgün Giriniz!(0-100)");
+                    vizeError = true; 
+                }
+                else
+                {
+                    vizeError = false;
+                }
+                if($("#final").val() == "" || $("#final").val() < 0 || $("#final").val() >100)
+                {
+                    $("#finalError").text("Lütfen Final Notunuzu Düzgün Giriniz!(0-100)");
+                    finalError = true;
+                }
+                else
+                {
+                    finalError = false;
+                }
+
+
+                if(kisa1Error == false && kisa2Error == false && odevError == false
+                    && vizeError == false && finalError == false)
+                    {
+                        $("#kisa1Error").text("");
+                        $("#kisa2Error").text("");
+                        $("#odevError").text("");
+                        $("#vizeError").text("");
+                        $("#finalError").text("");
+
+                        var ort = (kisa1 * 0.1) + (kisa2 * 0.1) + (odev * 0.1) + (vize * 0.2) + (final * 0.5)
+
+                        if(ort >= 0)
+                        {
+                            $("#notOrtalaması").text("Ortalama Sonucu: " + ort);
+                        }
+                    }
+
+                
+                
+            });
+
+
+        });
+
+
+    </script>
+
+</body>
+</html>

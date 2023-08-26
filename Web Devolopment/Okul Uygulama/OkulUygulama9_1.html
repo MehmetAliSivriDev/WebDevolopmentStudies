@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Okul Uygulama 9_1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .button1{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            color: white;
+
+        }
+        div{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <button  class="arttirma" style="width: 100px;height: 100px;text-align: center;color: black;float: left;">+</button>
+    <button  class="eksiltme" style="width: 100px;height: 100px;text-align: center;color: black;float: left;">-</button>
+    <div>
+        <p style="padding: 25px;">0</p>
+    </div>
+    <script>
+
+        
+            
+        var deger = 0;
+
+        $("button").on("click", function(){
+            
+            if($(this).hasClass("arttirma"))
+            {
+                deger += 1;
+                $("p").text(deger);
+                if(deger == 0)
+                {
+                    $("div").css("background-color","blue");
+                }
+                else if (deger > 0)
+                {
+                    $("div").css("background-color","yellow");
+                    $("p").css("color","black");
+                }
+                else if (deger < 0)
+                {
+                    $("div").css("background-color","red");
+                    $("p").css("color","white");
+                }
+            }
+            else if ($(this).hasClass("eksiltme"))
+            {
+                deger -= 1;
+                $("p").text(deger);
+                if(deger == 0)
+                {
+                    $("div").css("background-color","blue");
+                }
+                else if (deger > 0)
+                {
+                    $("div").css("background-color","yellow");
+                    $("p").css("color","black");
+                }
+                else if (deger < 0)
+                {
+                    $("div").css("background-color","red");
+                    $("p").css("color","white");
+                }
+            }
+            
+        });
+
+
+
+    </script>
+</body>
+</html>

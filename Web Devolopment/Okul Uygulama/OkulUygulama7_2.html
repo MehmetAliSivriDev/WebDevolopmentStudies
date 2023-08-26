@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>palindromSayi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <script>
+        var binler,birler,c,yuzler,onlar,k,l,m,d;
+
+        var palindromSayi = [];
+
+        for(i =10; i<=99; i++){
+            for(j=10; j<=99; j++){
+                c = i*j;
+                binler = parseInt(c/1000);
+                birler = c % 10;
+                k = parseInt(c/100);
+                m = parseInt(c/10);
+                yuzler = k - binler *10;
+                onlar = m - k*10;
+
+                if(binler == birler &&  yuzler == onlar){
+                    palindromSayi.push(c);
+                }
+            }
+        }
+
+        for(i=0;i<palindromSayi.length;i++)
+        {
+            document.write(palindromSayi[i] + "<br>");
+        }
+
+        alert("En Büyük Palindrom Sayi: " + palindromSayi.pop());
+
+
+
+    </script>
+
+</body>
+</html>

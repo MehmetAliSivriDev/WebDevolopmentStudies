@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <div class="deneme">Div 1</div>
+    <div class="deneme">Div 2</div>
+    <div class="deneme">Div 3</div>
+
+    <h1>Başlık 1</h1>
+    <h1>Başlık 2</h1>
+    <h1>Başlık 3</h1>
+
+    <div class="ParagrafDivi">
+
+        <p>Yazilar 1</p>
+        <p>Yazilar 2</p>
+        <p>Yazilar 3</p>
+        <p>Yazilar 4</p>
+
+    </div>
+
+
+<script>
+
+    var yaziDizisi = document.getElementsByClassName("deneme");
+
+    for(i=0;i<yaziDizisi.length;i++)
+    {
+        yaziDizisi[i].innerHTML = "Deneme " + (i+1);
+    }
+
+    var baslikDizisi = document.getElementsByTagName("h1");
+
+    for(i=0;i<baslikDizisi.length;i++)
+    {
+        baslikDizisi[i].innerHTML = "Değişmiş Başlık " + (i+1);
+    }
+
+    var paragrafDiv = document.getElementById("ParagrafDivi");
+
+    var arrParagraf = paragrafDiv.childNodes;
+
+    for(i=0;i<arrParagraf.length;i++)
+    {
+        arrParagraf[i].innerHTML = "Değiştirilimiş Yazilar" + (i+1);
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degerlendirme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+       
+
+    
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #555;
+  color: #fff;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+ul li ul li:hover { background: #666; }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form action="numara.php" method="post">
+        <h3>Sitemizi Değerlendirin!</h3>
+        <label>Ad:</label>
+        <input type="text" name="ad">
+        <br><br>
+        <label>Soyad:</label>
+        <input type="text" name="soyad">
+        <br><br>
+        <label>Email:</label>
+        <input type="text" name="mail"><br>
+        <br>
+        <label>telno:</label>
+        <input type="text" name="tel_no" placeholder = "telefon numaranızı giriniz">
+    <br><br>
+
+
+    <br><br>
+<label for="">poliklinik:</label>
+<select name="bölüm">
+ 
+       <option value="poliklinikler">poliklinikler</option>
+     <option value="üroloji">üroloji</option>
+     
+      <option value="BeslenmeVeDiyet">BeslenmeVeDiyet</option>
+    
+     <option value="RuhSağlığıVeHastalıkları">RuhSağlığıVeHastalıkları</option>
+     
+      <option value="KlinikPsikolog">KlinikPsikolog</option>
+     
+      <option value="Algoloji">Algoloji</option>
+      
+     <option value="KulakBurunBoğazHastalıkları">KulakBurunBoğazHastalıkları</option>
+     
+    <option value="nöroloji">nöroloji</option>
+     
+      <option value="BeyinVeSinirCerrahisi">BeyinVeSinirCerrahisi</option>
+     
+      <option value="GenelCerrahi">GenelCerrahi</option>
+     
+     <option value="kardiyoloji">kardiyoloji</option>
+  
+     <option value="dahiliye">dahiliye</option>
+   
+      <option value="AcilServis">AcilServis</option>
+    
+     <option value="FizikTedaviVeRehabilitasyon">FizikTedaviVeRehabilitasyon</option>
+    
+     <option value="biorezonans">biorezonans</option>
+     
+    <option value="CocukSaglıgıVeHastalıkları">CocukSaglıgıVeHastalıkları</option>
+     
+      <option value="GozHastalıkları">GozHastalıkları</option>
+
+</select>
+    <br><br>
+        <label >Konu:</label><br><br>
+        <input type="text" name="konu" placeholder="görüşmek istediğiniz konu :">
+<br><br>
+        <label>ileti:</label>
+        <br>
+        
+        <textarea name = "ileti" placeholder="Doktorunuza iletmek istediğiniz mesaj"></textarea><br>
+        <button type="submit" class="btn btn-primary" name="gonder">Gönder</button>
+    <br><br>
+
+    </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+</body>
+</html>

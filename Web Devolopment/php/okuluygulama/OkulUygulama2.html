@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 250px;
+            height: 30px;
+        }
+        select{
+            width: 250px;
+            height: 30px;
+        }
+        div{
+            border: 2px solid black;
+            width: 300px;
+            height: 550px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form action="OkulUygulama2.php" method="post">
+        <h2>Ek Ders Ücreti Hesaplayıcı</h2>
+        <p>Ünvan</p>
+        <select name="unvan" id="">
+            <option value="0">Ünvan Giriniz...</option>
+            <option value="1">Prof. Dr.</option>
+            <option value="2">Doç. Dr.</option>
+            <option value="3">YRD. Doç. Dr.</option>
+            <option value="4">Öğr. Gör</option>
+        </select>
+
+        <p>Teorik:</p>
+        <input type="number" name="teorik" id="" placeholder="Teorik Ders Saati Giriniz">
+
+        <p>Uygulama:</p>
+        <input type="number" name = "uygulama" id="" placeholder="Uygulama Ders Saati Giriniz">
+
+        <p>Aylık Katsayı:</p>
+        <input type="number" name="katsayi" id="" value="0.05592" >
+
+        <p>Alacağınız Ek Ücret:</p>
+        <input type="hidden" name="ek_ucret" id="" >
+
+        <br><br>
+        <input type="submit" value="Hesapla" id="" >
+        </form>
+    </div>
+
+        
+
+</body>
+</html>

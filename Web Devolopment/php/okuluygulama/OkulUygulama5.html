@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>OkulUygulama5</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container border border-dark">
+    <form action="OkulUygulama5.php" method="POST" onsubmit="validate();return false">
+        <h5>Üye Kayıt Forumu</h5>
+        <label>Kullanıcı Adı</label><br>
+        <input class="form-control" type="text" name="kullaniciAdi" id="kullaniciAdi" class="" placeholder="Kullanıcı Adı Giriniz">
+        <br><br>
+        <label>Ad</label><br>
+        <input class="form-control" type="text" name="ad" id="ad" placeholder="Adınızı Giriniz">
+        <br><br>
+        <label>Soyad</label><br>
+        <input class="form-control" type="text" name="soyad" id="soyad" placeholder="Soyadınızı Giriniz">
+        <br><br>
+        <label>Mail</label><br>
+        <input class="form-control" type="text" name="mail" id="mail" placeholder="Mail Adresinizi Giriniz">
+        <br><br>
+        <label>Şifre</label><br>
+        <input class="form-control" type="password" name="sifre" id="sifre" placeholder = "Şifrenizi Giriniz">
+        <p style="color: red" id="sifreHatasi"></p>
+        <br><br>
+        <button type="submit" class="btn btn-primary" name="gonder">Kaydol</button>
+
+    </form>
+</div>
+
+    <script>
+
+        function validate(){
+            var sifre = document.getElementById("sifre");
+
+            var sifreHatasi;
+
+            if(sifre.value.length < 8){
+                document.getElementById("sifreHatasi").innerHTML = "<b>Şifreniz En Az 8 Karekterli Olmalı!</b>";
+                sifreHatasi = true
+            }
+            else{
+                sifreHatasi = false;
+                form.submit();
+            }
+
+        }
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+</body>
+</html>
